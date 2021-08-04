@@ -1,0 +1,255 @@
+*{
+    box-sizing: border-box;
+    
+    
+}
+
+
+
+/******************************************************************************************/
+/************************************ NAVBAR - HEADER *************************************/
+/******************************************************************************************/
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+header{
+    padding: 20px 20px 5px 20px;
+    box-shadow: 0 0 1em  grey;
+ 
+}
+
+.nav-item a{
+    font-size: 1rem;
+
+}
+.align{
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content:space-between;
+
+}
+
+body
+{
+    font-family: 'Georama', sans-serif;
+    padding: 0%;
+    margin: 0%;
+   color: black;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 1rem;
+}
+
+.nav-link{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #475569;
+}
+
+.nav-link:hover{
+    color: #482ff7;
+}
+
+.nav-logo {
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: #482ff7;
+}
+
+.logo img{
+    max-width: 70px;
+}
+
+.basket img{
+    max-width: 30px;
+}
+
+/*******************************************************************************************/
+/************************************ MAIN *************************************************/
+/*******************************************************************************************/
+.align-body{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sdc{
+    display: flex;
+    justify-content: center;
+    padding: 20px 20px 5px 20px;
+}
+h1::before {
+  content: "___";
+    margin: auto;
+  left: -40px;
+  }
+h1::after {
+  content: "___";
+  margin: auto;
+
+  right: -40px;
+}
+.zigzag{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.size{
+
+    padding: 0px 20px 10px 20px;
+    margin: auto;
+}
+
+
+.container {
+    display: flex;
+
+    flex-direction: column;
+    
+
+  }
+
+
+.img-size{
+    width: 150px;
+
+}
+
+.offers{
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 0 1em  grey;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.offers img{
+    padding-right: 20px;
+}
+.offers div br {
+    margin-bottom: 20px;
+}
+.info{
+    display: flex;
+    justify-content: center;
+
+}
+.total{
+    display: flex;
+    justify-content: space-between;
+}
+.logovisa{
+
+    width: 85px;
+}
+
+/*******************************************************************************************/
+/************************************ MEDIA QUERIES ****************************************/
+/*******************************************************************************************/
+
+
+
+
+@media only screen and (max-width: 577px){
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+
+}
+
+
+@media  only screen and (min-width:576px){
+
+    .hide{
+        display: none;
+    }
+
+    .navbar {
+        margin-left: 200px;
+    }
+
+
+    .sizedesktop{
+        display: flex;
+        flex-direction: row;
+        margin: 0px 0px 0px 200px;
+        padding : 0px;
+
+    }
+
+    .total{
+        display: flex;
+        justify-content: center;
+    }
+    .total span{
+        margin-right: 40px;
+    }
+
+
+}

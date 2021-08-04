@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georama&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <title>Tediber</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="align">
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li class="nav-item logo">
+                        <a href="#"><img src="img/tediberLogo.png" alt="Logo du site"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">NOS PRODUITS</a>
+                        <i class="fas fa-chevron-down"></i>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">LE CONCEPT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">AVIS</a>
+                    </li>
+                    <li class="nav-item logo">
+                        <a href="#"><img src="img/logo-tediber.png" alt="Logo du site"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">PUBTV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">MON COMPTE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">MAG</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">CONTACTEZ VOUS</a>
+                    </li>
+                    <li class="nav-item basket">
+                        <a href="#"><img src="img/panier.png" alt="Logo du site"></a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+
+            <span class="logo hide">
+                <a href="#"><img src="img/tediberLogo.png" alt="Logo du site"></a>
+            </span>
+            <span class="basket hide">
+                <a href="#"><img src="img/panier.png" alt="Logo du panier"></a>
+            </span>
+        </div>
+
+
+    </header>
+
+    <main>
+        <div class="sdc">
+            <h1>SUIVI DE COMMANDE</h1>
+        </div>
+        <div class="zigzag">
+            <img src="img/zigzag copy 2.svg" alt="">
+        </div>
+        <div class="sizedesktop">
+            <section>
+                <article class="size" id="order" v-for="block in content.body">
+                    <div>
+                        <p>N° de commande : {{block.orderNumber}}</p>
+                        <p>Date de commande : {{block.orderDate}}</p>
+                        <p>Date d’expédition : {{block.orderDispatching}}</p>
+                    </div>
+                </article>
+                <article class="size" id="vue">
+                    <hr>
+                    <div class="align-body" v-on:click="isHidden = !isHidden">
+                        <p>Suivi de commande</p>
+
+
+                        <i class="fas fa-chevron-up" v-if="!isHidden"></i>
+                        <i class="fas fa-chevron-down" v-else="!isHidden"></i>
+
+                    </div>
+
+                    <div class="align-body">
+                        <img src="img/Group.svg" alt="" v-if="!isHidden">
+                        <i class="fas fa-long-arrow-alt-right" v-if="!isHidden"></i>
+                        <img src="img/Group 2.svg" alt="" v-if="!isHidden">
+                        <i class="fas fa-long-arrow-alt-right" v-if="!isHidden"></i>
+                        <img src="img/Group 3.svg" alt="" v-if="!isHidden">
+                        <i class="fas fa-long-arrow-alt-right" v-if="!isHidden"></i>
+                        <img src="img/Group 4.svg" alt="" v-if="!isHidden">
+                    </div>
+                    <div class="align-body">
+                        <i class="far fa-check-square" v-if="!isHidden"></i>
+                        <i class="far fa-check-square" v-if="!isHidden"></i>
+                        <i class="far fa-square" v-if="!isHidden"></i>
+                        <i class="far fa-square" v-if="!isHidden"></i>
+                    </div>
+
+                    <hr>
+
+
+                    <div class="align-body">
+                        <p>Information sur les retours</p>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <hr>
+                </article>
+            </section>
+
+            <section class="size" id="app">
+
+                <h4>ARTICLES ({{content.body.length}})</h4>
+                <div>
+                    <article>
+                        <div class="container">
+
+                            <div v-for="block in content.body" class="offers">
+                                <div>
+                                    <img :src="(`./img/${block.photos}`)" class="img-size">
+                                </div>
+                                <div>
+
+                                    <span>{{block.products}}</span><br>
+                                    <span>{{block.prices}}€</span><br>
+                                    <span>TAILLE : {{block.sizes}}cm</span><br>
+                                    <span>QTÉ : {{block.quantities}}</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+
+        <section class="size" id="shipping">
+            <div class="sdc">
+                <h1>INFORMATION SUR LA LIVRAISON</h1>
+            </div>
+            <div class="zigzag">
+                <img src="img/zigzag copy 2.svg" alt="">
+            </div>
+            <article class="offers info ">
+
+
+                <div class="container ">
+
+                    <div  v-for="block in content.body" >
+                            <div>
+                                <span>{{block.title}}</span><br> 
+                                <span>{{block.name}}</span><br>
+                                <span>{{block.phone}}</span><br> 
+                                <span>{{block.dateEstimated}}</span><br>
+                                <span>{{block.typeofship}}</span><br>
+                                <span>{{block.type}}</span><br>
+                                <span>{{block.orderAdress}}</span><br>
+                                <span>{{block.orderCity}}</span><br>
+                                <span>{{block.orderZipcode}}</span><br>
+                                <span>{{block.orderCountry}}</span><br>
+                                
+                            </div>
+                          <hr>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="size">
+            <div class="sdc">
+                <h1>INFORMATIONS DE PAIEMENT</h1>
+            </div>
+            <div class="zigzag">
+                <img src="img/zigzag copy 2.svg" alt="">
+            </div>
+
+            <article class="offers">
+                <div>
+                    <img src="img/Logo_CB-1-1024x503.jpg" alt="" class="logovisa">
+                    <span>VISA</span>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="size" id="total">
+            <div class="sdc">
+                <h1>TOTAL COMMANDE</h1>
+            </div>
+            <div class="zigzag">
+                <img src="img/zigzag copy 2.svg" alt="">
+            </div>
+
+            <article class="offers total">
+                <div v-for="block in content.body">
+                    <span>Sous-totale </span>{{block.subtotal}}<br>
+                    <span>Livraison </span>{{block.delivery}}<br>
+                    <span>TOTAL :</span> {{block.total}}
+                </div>
+            </article>
+
+        </section>
+
+
+    </main>
+
+    <footer>
+
+        <section>
+            <div class="sdc ">
+                <h1>BESOIN D’AIDE ?</h1>
+            </div>
+            <div class="zigzag">
+                <img src="img/zigzag copy 2.svg" alt="">
+            </div>
+
+            <article class="size">
+                <hr>
+                <div class="align-body">
+                    <p>FOIRE AUX QUESTIONS TEDIBER</p>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <hr>
+                <div class="align-body">
+                    <p>LA GARANTIE TEDIBER</p>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <hr>
+                <div class="align-body">
+                    <p>REPRISE DE L’ANCIENNE LITERIE</p>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <hr>
+                <div class="align-body">
+                    <p>COMMENT FAIRE UN RETOUR ?</p>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <hr>
+            </article>
+
+        </section>
+
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
